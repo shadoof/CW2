@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jaxfront version=2.1;time=2009-09-18 12:57:54.284;xui=jar:http://www.cascv.brown.edu/cavewriting/2006/CWEditor/cavewriting.jar!/schema/caveschema.xui;xsd=caveschema.xsd?>
+<Story version="8" last_xpath="/Story
+">
+       <ObjectRoot>
+              <Object name="1">
+                     <Visible>true</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="10.0">
+                                   <text>Move Away</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>153,153,255</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <ObjectChange name="1">
+                                                        <Transition duration="1.0">
+                                                               <MoveRel>
+                                                                      <Placement>
+                                                                             <RelativeTo>Center</RelativeTo>
+                                                                             <Position>(0.0, 0.0, -1.0)</Position>
+                                                                      </Placement>
+                                                               </MoveRel>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+              <Object name="2">
+                     <Visible>true</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(-2.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Arial.ttf" depth="15.0">
+                                   <text>Rotate</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>102,255,0</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <ObjectChange name="2">
+                                                        <Transition duration="0.5">
+                                                               <MoveRel>
+                                                                      <Placement>
+                                                                             <RelativeTo>Center</RelativeTo>
+                                                                             <Position>(0.0, 0.0, 0.0)</Position>
+                                                                                    <Axis rotation="(0.0, 1.0, 0.0)" angle="45.0"/>
+                                                                      </Placement>
+                                                               </MoveRel>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+              <Object name="3">
+                     <Visible>true</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(1.0, -1.0, 2.0)</Position>
+                                   <LookAt target="(0.0, 1.0, 3.0)" up="(0.0, 1.0, 0.0)"/>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Times.ttf" depth="30.0">
+                                   <text>Rotate Upwards</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>255,102,153</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <ObjectChange name="3">
+                                                        <Transition duration="1.0">
+                                                               <MoveRel>
+                                                                      <Placement>
+                                                                             <RelativeTo>Center</RelativeTo>
+                                                                             <Position>(0.0, 0.0, 0.0)</Position>
+                                                                                    <LookAt target="(4.0, 1.0, 2.0)" up="(0.0, 1.0, 1.0)"/>
+                                                                      </Placement>
+                                                               </MoveRel>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+              <Object name="4">
+                     <Visible>true</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 1.5, 2.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Lucida.ttf" depth="10.0">
+                                   <text>Back and Forth</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>0,128,255</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <ObjectChange name="4">
+                                                        <Transition duration="2.0">
+                                                               <MoveRel>
+                                                                      <Placement>
+                                                                             <RelativeTo>Center</RelativeTo>
+                                                                             <Position>(0.0, 0.0, 2.0)</Position>
+                                                                                    <LookAt target="(0.0, 0.0, 1.0)" up="(0.0, 1.0, 0.0)"/>
+                                                                      </Placement>
+                                                               </MoveRel>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+              <Object name="5">
+                     <Visible>true</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(-1.0, 0.0, 3.0)</Position>
+                                   <LookAt target="(0.0, 0.0, 6.0)" up="(0.0, 1.0, 0.0)"/>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Century.ttf" depth="10.0">
+                                   <text>Rotate Cave</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>204,204,0</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <MoveCave duration="3.0">
+                                                               <Relative/>
+                                                        <Placement>
+                                                               <RelativeTo>Center</RelativeTo>
+                                                               <Position>(0.0, -1.0, 1.0)</Position>
+                                                                      <Axis rotation="(0.0, 1.0, 1.0)" angle="60.0"/>
+                                                        </Placement>
+                                                 </MoveCave>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+              <Object name="6">
+                     <Visible>true</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>2.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(2.0, 2.0, 2.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="MiniH24.ttf" depth="0.0">
+                                   <text>Restart</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>255,255,255</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <Restart/>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+       </ObjectRoot>
+       <PlacementRoot>
+              <Placement name="Center">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, 0.0)</Position>
+                            <Axis rotation="(0.0, 1.0, 0.0)" angle="0.0"/>
+              </Placement>
+              <Placement name="FrontWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, -4.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="LeftWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(-4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="RightWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="FloorWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, -4.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 0.0, -1.0)"/>
+              </Placement>
+       </PlacementRoot>
+       <Global>
+              <CameraPos far-clip="100.0">
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 1.0, 6.0)</Position>
+                     </Placement>
+              </CameraPos>
+              <CaveCameraPos far-clip="100.0">
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+              </CaveCameraPos>
+              <Background color="0, 0, 0"/>
+              <WandNavigation allow-rotation="false" allow-movement="false"/>
+       </Global>
+</Story>

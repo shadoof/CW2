@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jaxfront version=2.0;time=2006-10-30 12:24:39.83;xui=file:/C:/Documents%20and%20Settings/Ilya%20Kreymer/My%20Documents/workspace/CaveUI/schema/brandnew.xui;xsd=brandnew.xsd?>
+<Story xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:/C:/Projects/CW/cweditor/schema/caveschema.xsd" version="5">
+       <Object name="1">
+              <Visible>true</Visible>
+              <Color>255,255,255</Color>
+              <Scale>1.0</Scale>
+              <Placement>
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(-2.0, 0.0, 0.0)</Position>
+              </Placement>
+              <Content>
+                     <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="0.0">
+                            <text>left</text>
+                     </Text>
+              </Content>
+       </Object>
+       <Object name="2">
+              <Visible>true</Visible>
+              <Color>255,255,255</Color>
+              <Scale>1.0</Scale>
+              <Placement>
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, 0.0)</Position>
+              </Placement>
+              <Content>
+                     <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="0.0">
+                            <text>center</text>
+                     </Text>
+              </Content>
+       </Object>
+       <Object name="3">
+              <Visible>true</Visible>
+              <Color>255,255,255</Color>
+              <Scale>1.0</Scale>
+              <Placement>
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(2.0, 0.0, 0.0)</Position>
+              </Placement>
+              <Content>
+                     <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="0.0">
+                            <text>right</text>
+                     </Text>
+              </Content>
+       </Object>
+       <Group name="G">
+                     <Objects name="1"/>
+                     <Objects name="2"/>
+                     <Objects name="3"/>
+       </Group>
+       <Timeline name="1" start-immediately="true">
+              <TimedActions seconds-time="0.5">
+                     <GroupRef name="G" random="Select One Randomly">
+                            <Transition duration="0.5">
+                                   <MoveRel>
+                                          <Placement>
+                                                 <RelativeTo>Center</RelativeTo>
+                                                 <Position>(0.0, 0.0, 2.0)</Position>
+                                          </Placement>
+                                   </MoveRel>
+                            </Transition>
+                     </GroupRef>
+              </TimedActions>
+              <TimedActions seconds-time="1.0">
+                     <GroupRef name="G" random="Select One Randomly">
+                            <Transition duration="0.5">
+                                   <MoveRel>
+                                          <Placement>
+                                                 <RelativeTo>Center</RelativeTo>
+                                                 <Position>(0.0, 0.0, -2.0)</Position>
+                                          </Placement>
+                                   </MoveRel>
+                            </Transition>
+                     </GroupRef>
+              </TimedActions>
+              <TimedActions seconds-time="1.5">
+                     <TimerChange name="1">
+                            <start/>
+                     </TimerChange>
+              </TimedActions>
+       </Timeline>
+       <Placement name="Center">
+              <RelativeTo>Center</RelativeTo>
+              <Position>(0.0, 0.0, 0.0)</Position>
+                     <Axis rotation="(0.0, 1.0, 0.0)" angle="0.0"/>
+       </Placement>
+       <Placement name="FrontWall">
+              <RelativeTo>Center</RelativeTo>
+              <Position>(0.0, 0.0, -4.0)</Position>
+                     <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+       </Placement>
+       <Placement name="LeftWall">
+              <RelativeTo>Center</RelativeTo>
+              <Position>(-4.0, 0.0, 0.0)</Position>
+                     <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+       </Placement>
+       <Placement name="RightWall">
+              <RelativeTo>Center</RelativeTo>
+              <Position>(4.0, 0.0, 0.0)</Position>
+                     <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+       </Placement>
+       <Placement name="FloorWall">
+              <RelativeTo>Center</RelativeTo>
+              <Position>(0.0, -4.0, 0.0)</Position>
+                     <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 0.0, -1.0)"/>
+       </Placement>
+       <Global>
+              <CameraPos>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 6.0)</Position>
+                     </Placement>
+              </CameraPos>
+       </Global>
+</Story>

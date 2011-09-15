@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jaxfront version=2.1;time=2009-09-18 13:06:45.483;xui=jar:http://www.cascv.brown.edu/cavewriting/2006/CWEditor/cavewriting.jar!/schema/caveschema.xui;xsd=caveschema.xsd?>
+<Story version="8" last_xpath="/Story
+">
+       <ObjectRoot>
+              <Object name="frontlink">
+                     <Visible>true</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>true</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>2.5</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0, 0, 0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="RussellSquare.ttf" depth="15">
+                                   <text>&quot;If you&apos;ve got a phone,
+you&apos;ve got a lawyer!&quot;</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>255,255,255</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+              <Object name="light_red">
+                     <Visible>true</Visible>
+                     <Color>255,0,0</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 2.0)</Position>
+                                   <Axis rotation="(0.0, 1.0, 0.0)" angle="180"/>
+                     </Placement>
+                     <Content>
+                            <Light diffuse="true" specular="true" const_atten="1.0" lin_atten="0.0" quad_atten="0.0">
+                                   <Spot angle="30.0"/>
+                            </Light>
+                     </Content>
+              </Object>
+              <Object name="light_blue">
+                     <Visible>true</Visible>
+                     <Color>0,0,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 2.0)</Position>
+                                   <Axis rotation="(0.0, 1.0, 0.0)" angle="180"/>
+                     </Placement>
+                     <Content>
+                            <Light diffuse="true" specular="true" const_atten="1.0" lin_atten="0.0" quad_atten="0.0">
+                                   <Spot angle="30.0"/>
+                            </Light>
+                     </Content>
+              </Object>
+              <Object name="light_grey">
+                     <Visible>true</Visible>
+                     <Color>127,127,127</Color>
+                     <Lighting>true</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 2.0, 0.0)</Position>
+                                   <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 0.0, 1.0)"/>
+                     </Placement>
+                     <Content>
+                            <Light diffuse="true" specular="true" const_atten="1.0" lin_atten="0.0" quad_atten="0.0">
+                                   <Point/>
+                            </Light>
+                     </Content>
+              </Object>
+       </ObjectRoot>
+       <TimelineRoot>
+              <Timeline name="red" start-immediately="true">
+                     <TimedActions seconds-time="0.0">
+                            <ObjectChange name="light_red">
+                                   <Transition duration="1.0">
+                                          <Movement>
+                                                 <Placement>
+                                                        <RelativeTo>Center</RelativeTo>
+                                                        <Position>(-4.0, 0.0, 2.0)</Position>
+                                                               <Axis rotation="(0.0, 1.0, 0.0)" angle="180"/>
+                                                 </Placement>
+                                          </Movement>
+                                   </Transition>
+                            </ObjectChange>
+                     </TimedActions>
+                     <TimedActions seconds-time="1.0">
+                            <ObjectChange name="light_red">
+                                   <Transition duration="1.0">
+                                          <Movement>
+                                                 <Placement>
+                                                        <RelativeTo>Center</RelativeTo>
+                                                        <Position>(4.0, 0.0, 2.0)</Position>
+                                                               <Axis rotation="(0.0, 1.0, 0.0)" angle="180.0"/>
+                                                 </Placement>
+                                          </Movement>
+                                   </Transition>
+                            </ObjectChange>
+                     </TimedActions>
+                     <TimedActions seconds-time="2.0">
+                            <TimerChange name="red">
+                                   <start/>
+                            </TimerChange>
+                     </TimedActions>
+              </Timeline>
+              <Timeline name="blue" start-immediately="true">
+                     <TimedActions seconds-time="1.0">
+                            <ObjectChange name="light_blue">
+                                   <Transition duration="1.0">
+                                          <Movement>
+                                                 <Placement>
+                                                        <RelativeTo>Center</RelativeTo>
+                                                        <Position>(-4.0, 0.0, 2.0)</Position>
+                                                               <Axis rotation="(0.0, 1.0, 0.0)" angle="180"/>
+                                                 </Placement>
+                                          </Movement>
+                                   </Transition>
+                            </ObjectChange>
+                     </TimedActions>
+                     <TimedActions seconds-time="0.0">
+                            <ObjectChange name="light_blue">
+                                   <Transition duration="1.0">
+                                          <Movement>
+                                                 <Placement>
+                                                        <RelativeTo>Center</RelativeTo>
+                                                        <Position>(4.0, 0.0, 2.0)</Position>
+                                                               <Axis rotation="(0.0, 1.0, 0.0)" angle="180.0"/>
+                                                 </Placement>
+                                          </Movement>
+                                   </Transition>
+                            </ObjectChange>
+                     </TimedActions>
+                     <TimedActions seconds-time="2.0">
+                            <TimerChange name="blue">
+                                   <start/>
+                            </TimerChange>
+                     </TimedActions>
+              </Timeline>
+       </TimelineRoot>
+       <PlacementRoot>
+              <Placement name="Center">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, 0.0)</Position>
+                            <Axis rotation="(0.0, 1.0, 0.0)" angle="0.0"/>
+              </Placement>
+              <Placement name="FrontWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, -4.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="LeftWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(-4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="RightWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="FloorWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, -4.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 0.0, -1.0)"/>
+              </Placement>
+       </PlacementRoot>
+       <Global>
+              <CameraPos far-clip="100.0">
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 6.0)</Position>
+                     </Placement>
+              </CameraPos>
+              <CaveCameraPos far-clip="100.0">
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+              </CaveCameraPos>
+              <Background color="0, 0, 0"/>
+              <WandNavigation allow-rotation="false" allow-movement="false"/>
+       </Global>
+</Story>

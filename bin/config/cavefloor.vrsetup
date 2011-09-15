@@ -1,0 +1,46 @@
+# VRG3D VR Setup Configuration File
+
+Description           Brown's CAVE - floor wall
+
+
+# Set to 1 to connect to a vrg3d-server for synchronization and events
+ClusterClient         1
+ClusterServerHost     cs-front
+
+
+# Name of a VRG3D configuration file for input devices (leave blank
+# for no devices other than kbd and mouse)
+InputDevicesFile      
+
+
+# These correspond to G3D::GWindow::Settings
+WindowWidth           1024
+WindowHeight          768
+WindowX               0
+WindowY               0
+WindowCenter          0
+WindowRGBBits         8
+WindowAlphaBits       8
+WindowDepthBits       8
+WindowStencilBits     8
+WindowFSAASamples     1
+WindowFullScreen      1
+WindowAsychronous     1
+WindowStereo          1
+WindowRefreshRate     120
+WindowResizable       1
+WindowAllowMaximize   1
+WindowFramed          0
+WindowCaption         VRG3D Application
+WindowMouseVisible    0
+
+# Setup the VRG3D::DisplayTile for this display
+TileTopLeft           ( 4,-4, 4)
+TileTopRight          (-4,-4, 4)
+TileBotLeft           ( 4,-4,-4)
+TileBotRight          (-4,-4,-4)
+TileNearClip          0.01
+TileFarClip           100.0
+TileFlipStereo        0
+TileInitialHeadFrame  ((1,0,0,0), (0,1,0,0), (0,0,1,1), (0,0,0,1))
+

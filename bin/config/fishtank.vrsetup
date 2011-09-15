@@ -1,0 +1,46 @@
+# VRG3D VR Setup Configuration File
+
+Description           A fishtank VR setup with no devices
+
+
+# Set to 1 to connect to a vrg3d-server for synchronization and events
+ClusterClient         0
+ClusterServerHost     127.0.0.1
+
+
+# Name of a VRG3D configuration file for input devices (leave blank
+# for no devices other than kbd and mouse)
+InputDevicesFile      
+
+
+# These correspond to G3D::GWindow::Settings
+WindowWidth           max
+WindowHeight          max
+WindowX               0
+WindowY               0
+WindowCenter          0
+WindowRGBBits         8
+WindowAlphaBits       8
+WindowDepthBits       8
+WindowStencilBits     8
+WindowFSAASamples     1
+WindowFullScreen      1
+WindowAsychronous     1
+WindowStereo          1
+WindowRefreshRate     75
+WindowResizable       1
+WindowAllowMaximize   1
+WindowFramed          0
+WindowCaption         VRG3D Application
+WindowMouseVisible    1
+
+# Setup the VRG3D::DisplayTile for this display
+TileTopLeft           (-0.65, 0.5, 0.0)
+TileTopRight          ( 0.65, 0.5, 0.0)
+TileBotLeft           (-0.65,-0.5, 0.0)
+TileBotRight          ( 0.65,-0.5, 0.0)
+TileNearClip          0.01
+TileFarClip           100.0
+TileFlipStereo        0
+TileInitialHeadFrame  ((1,0,0,0), (0,1,0,0), (0,0,1,1), (0,0,0,1))
+

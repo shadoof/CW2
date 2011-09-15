@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="libprops"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="$(G3DBUILDPATH)\include"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalLibraryDirectories="$(G3DBUILDPATH)\lib"
+	/>
+	<UserMacro
+		Name="LIBPATH"
+		Value="$(SolutionDir)/../../src"
+	/>
+	<UserMacro
+		Name="BINPATH"
+		Value="$(SolutionDir)/../../bin/win32"
+	/>
+	<UserMacro
+		Name="G3DBUILDPATH"
+		Value="C:\libraries\G3D"
+	/>
+</VisualStudioPropertySheet>

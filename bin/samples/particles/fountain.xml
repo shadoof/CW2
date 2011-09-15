@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jaxfront version=2.1;time=2006-12-08 18:33:45.125;xui=jar:file:/users/kreymer/.java/deployment/cache/javaws/http/Dwww.cascv.brown.edu/P80/DMcavewriting/DM2006/DMCWEditor/RMcavewriting.jar!/schema/caveschema.xui;xsd=caveschema.xsd?>
+<Story version="8" last_xpath="/Story/ObjectRoot/Object[2]
+">
+       <ObjectRoot>
+              <Object name="particlesys">
+                     <Visible>true</Visible>
+                     <Color>255,0,0</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <ParticleSystem max-particles="500" actions-name="1" particle-group="1" look-at-camera="false" sequential="true" speed="0.4"/>
+                     </Content>
+              </Object>
+              <Object name="F">
+                     <Visible>false</Visible>
+                     <Color>255,0,51</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="20">
+                                   <text>F</text>
+                            </Text>
+                     </Content>
+              </Object>
+              <Object name="O">
+                     <Visible>false</Visible>
+                     <Color>51,51,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="20">
+                                   <text>O</text>
+                            </Text>
+                     </Content>
+              </Object>
+              <Object name="U">
+                     <Visible>false</Visible>
+                     <Color>0,255,0</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="20">
+                                   <text>U</text>
+                            </Text>
+                     </Content>
+              </Object>
+              <Object name="N">
+                     <Visible>false</Visible>
+                     <Color>255,255,51</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="20">
+                                   <text>N</text>
+                            </Text>
+                     </Content>
+              </Object>
+              <Object name="T">
+                     <Visible>false</Visible>
+                     <Color>255,0,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="20">
+                                   <text>T</text>
+                            </Text>
+                     </Content>
+              </Object>
+       </ObjectRoot>
+       <GroupRoot>
+              <Group name="1">
+                            <Objects name="F"/>
+                            <Objects name="O"/>
+                            <Objects name="U"/>
+                            <Objects name="N"/>
+                            <Objects name="T"/>
+              </Group>
+       </GroupRoot>
+       <PlacementRoot>
+              <Placement name="Center">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, 0.0)</Position>
+                            <Axis rotation="(0.0, 1.0, 0.0)" angle="0.0"/>
+              </Placement>
+              <Placement name="FrontWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, -4.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="LeftWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(-4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="RightWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="FloorWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, -4.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 0.0, -1.0)"/>
+              </Placement>
+       </PlacementRoot>
+       <ParticleActionRoot>
+              <ParticleActionList name="1">
+                     <Source rate="5">
+                            <ParticleDomain>
+                                   <Line p1="(0, 0, 0)" p2="(0, 0.405, 0)"/>
+                            </ParticleDomain>
+                     </Source>
+                     <Vel>
+                            <ParticleDomain>
+                                   <Cylinder p1="(0, 0.25, -0.001)" p2="(0, 0.27, -0.001)" radius="0.11" radius-inner="0.07"/>
+                            </ParticleDomain>
+                     </Vel>
+                     <ParticleAction>
+                            <Gravity direction="(0, -0.01, 0)"/>
+                     </ParticleAction>
+                     <ParticleAction>
+                            <Bounce friction="-0.05" resilience="0.35" cutoff="0">
+                                   <ParticleDomain>
+                                          <Disc center="(0, 0, 0)" normal="(0, 1, 0)" radius="5" radius-inner="0.0"/>
+                                   </ParticleDomain>
+                            </Bounce>
+                     </ParticleAction>
+                     <RemoveCondition>
+                            <Position inside="false">
+                                   <ParticleDomain>
+                                          <Plane point="(0, -3, 0)" normal="(0, 1, 0)"/>
+                                   </ParticleDomain>
+                            </Position>
+                     </RemoveCondition>
+              </ParticleActionList>
+       </ParticleActionRoot>
+       <Global>
+              <CameraPos>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 6.0)</Position>
+                     </Placement>
+              </CameraPos>
+              <CaveCameraPos>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+              </CaveCameraPos>
+              <Background color="0,0,0"/>
+       </Global>
+</Story>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jaxfront version=2.1;time=2009-09-18 12:56:22.699;xui=jar:http://cavewriting.sourceforge.net/2006/CWEditor/cavewriting.jar!/schema/caveschema.xui;xsd=caveschema.xsd?>
+<Story version="8" last_xpath="/Story
+">
+       <ObjectRoot>
+              <Object name="1">
+                     <Visible>true</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <SoundRef>./ding.wav</SoundRef>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                                   <LookAt target="(0.0, 0.0, -1.0)" up="(0.0, 1.0, 0.0)"/>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" depth="0.0">
+                                   <text>Play Sound</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>0,128,255</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <ObjectChange name="1">
+                                                        <Transition duration="1.0">
+                                                               <Sound action="Play Sound"/>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+       </ObjectRoot>
+       <PlacementRoot>
+              <Placement name="Center">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, 0.0)</Position>
+                            <Axis rotation="(0.0, 1.0, 0.0)" angle="0.0"/>
+              </Placement>
+              <Placement name="FrontWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, -4.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="LeftWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(-4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="RightWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="FloorWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, -4.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 0.0, -1.0)"/>
+              </Placement>
+       </PlacementRoot>
+       <SoundRoot>
+              <Sound name="./ding.wav" filename="./ding.wav" autostart="false">
+                     <Repeat>
+                            <NoRepeat/>
+                     </Repeat>
+                     <Settings freq="1.0" volume="1.0" pan="0.0"/>
+              </Sound>
+       </SoundRoot>
+       <Global>
+              <CameraPos far-clip="100.0">
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 6.0)</Position>
+                     </Placement>
+              </CameraPos>
+              <CaveCameraPos far-clip="100.0">
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+              </CaveCameraPos>
+              <Background color="0, 0, 0"/>
+              <WandNavigation allow-rotation="false" allow-movement="false"/>
+       </Global>
+</Story>

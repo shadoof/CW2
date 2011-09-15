@@ -1,0 +1,6 @@
+#!/bin/bash
+./grexec-gcc3 audio-cave -terminate
+#ssh front killall cwapp &
+#ssh left killall cwapp &
+#ssh right killall cwapp &
+#ssh floor killall cwapp &

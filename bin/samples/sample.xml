@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jaxfront version=2.1;time=2009-09-18 12:55:55.499;xui=jar:http://cavewriting.sourceforge.net/2006/CWEditor/cavewriting.jar!/schema/caveschema.xui;xsd=caveschema.xsd?>
+<Story version="8" last_xpath="/Story
+">
+       <ObjectRoot>
+              <Object name="movingtext">
+                     <Visible>true</Visible>
+                     <Color>153,153,153</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1</Scale>
+                     <Placement>
+                            <RelativeTo>LeftWall</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="0.0">
+                                   <text>Some Text</text>
+                            </Text>
+                     </Content>
+              </Object>
+              <Object name="frontlink">
+                     <Visible>true</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="0.0">
+                                   <text>Fly Front</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>0,128,255</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <ObjectChange name="movingtext">
+                                                        <Transition duration="1.0">
+                                                               <Movement>
+                                                                      <Placement>
+                                                                             <RelativeTo>FrontWall</RelativeTo>
+                                                                             <Position>(0.0, -2.0, 0.0)</Position>
+                                                                      </Placement>
+                                                               </Movement>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="frontlink">
+                                                        <Transition duration="1.0">
+                                                               <Visible>false</Visible>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="rightlink">
+                                                        <Transition duration="1.0">
+                                                               <Visible>true</Visible>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="movingtext">
+                                                        <Transition duration="1.0">
+                                                               <Color>0,153,153</Color>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+              <Object name="rightlink">
+                     <Visible>false</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="0.0">
+                                   <text>Fly Right</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>0,128,255</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <ObjectChange name="movingtext">
+                                                        <Transition duration="1.0">
+                                                               <Movement>
+                                                                      <Placement>
+                                                                             <RelativeTo>RightWall</RelativeTo>
+                                                                             <Position>(0.0, 0.0, 0.0)</Position>
+                                                                                    <LookAt target="(0.0, 0.0, -1.0)" up="(0.0, 1.0, 0.0)"/>
+                                                                      </Placement>
+                                                               </Movement>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="rightlink">
+                                                        <Transition duration="1.0">
+                                                               <Visible>false</Visible>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="floorlink">
+                                                        <Transition duration="1.0">
+                                                               <Visible>true</Visible>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="movingtext">
+                                                        <Transition duration="1.0">
+                                                               <Color>255,0,102</Color>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+              <Object name="floorlink">
+                     <Visible>false</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="0.0">
+                                   <text>Fly Floor</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>0,128,255</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <ObjectChange name="movingtext">
+                                                        <Transition duration="1.0">
+                                                               <Movement>
+                                                                      <Placement>
+                                                                             <RelativeTo>FloorWall</RelativeTo>
+                                                                             <Position>(0.0, 0.0, 0.0)</Position>
+                                                                      </Placement>
+                                                               </Movement>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="floorlink">
+                                                        <Transition duration="1.0">
+                                                               <Visible>false</Visible>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="leftlink">
+                                                        <Transition duration="1.0">
+                                                               <Visible>true</Visible>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="movingtext">
+                                                        <Transition duration="1.0">
+                                                               <Color>255,255,0</Color>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+              <Object name="leftlink">
+                     <Visible>false</Visible>
+                     <Color>255,255,255</Color>
+                     <Lighting>false</Lighting>
+                     <ClickThrough>false</ClickThrough>
+                     <AroundSelfAxis>false</AroundSelfAxis>
+                     <Scale>1.0</Scale>
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+                     <Content>
+                            <Text horiz-align="center" vert-align="center" font="Courier.ttf" depth="0.0">
+                                   <text>Fly Left</text>
+                            </Text>
+                     </Content>
+                     <LinkRoot>
+                            <Link>
+                                   <Enabled>true</Enabled>
+                                   <RemainEnabled>true</RemainEnabled>
+                                   <EnabledColor>0,128,255</EnabledColor>
+                                   <SelectedColor>255,0,0</SelectedColor>
+                                   <Actions>
+                                                 <ObjectChange name="movingtext">
+                                                        <Transition duration="1.0">
+                                                               <Movement>
+                                                                      <Placement>
+                                                                             <RelativeTo>LeftWall</RelativeTo>
+                                                                             <Position>(0.0, 0.0, 0.0)</Position>
+                                                                      </Placement>
+                                                               </Movement>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="leftlink">
+                                                        <Transition duration="1.0">
+                                                               <Visible>false</Visible>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="frontlink">
+                                                        <Transition duration="1.0">
+                                                               <Visible>true</Visible>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                                   <Actions>
+                                                 <ObjectChange name="movingtext">
+                                                        <Transition duration="1.0">
+                                                               <Color>0,204,51</Color>
+                                                        </Transition>
+                                                 </ObjectChange>
+                                   </Actions>
+                            </Link>
+                     </LinkRoot>
+              </Object>
+       </ObjectRoot>
+       <PlacementRoot>
+              <Placement name="Center">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, 0.0)</Position>
+                            <Axis rotation="(0.0, 1.0, 0.0)" angle="0.0"/>
+              </Placement>
+              <Placement name="FrontWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, 0.0, -4.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="LeftWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(-4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="RightWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(4.0, 0.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 1.0, 0.0)"/>
+              </Placement>
+              <Placement name="FloorWall">
+                     <RelativeTo>Center</RelativeTo>
+                     <Position>(0.0, -4.0, 0.0)</Position>
+                            <LookAt target="(0.0, 0.0, 0.0)" up="(0.0, 0.0, -1.0)"/>
+              </Placement>
+       </PlacementRoot>
+       <Global>
+              <CameraPos far-clip="100.0">
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 6.0)</Position>
+                     </Placement>
+              </CameraPos>
+              <CaveCameraPos far-clip="100.0">
+                     <Placement>
+                            <RelativeTo>Center</RelativeTo>
+                            <Position>(0.0, 0.0, 0.0)</Position>
+                     </Placement>
+              </CaveCameraPos>
+              <Background color="0, 0, 0"/>
+              <WandNavigation allow-rotation="false" allow-movement="false"/>
+       </Global>
+</Story>

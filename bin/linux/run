@@ -1,0 +1,110 @@
+#!/bin/bash
+
+# CaveWriting Run-in-Cave Script
+
+LD_LIBRARY_PATH=$(pwd)/lib
+
+#$G/bin/cave_on
+#$G/bin/cave_display_cluster4
+
+# ssh cave@g5 ./cw-soundserver &
+
+
+if [ "$#" == "0" ]
+then
+  echo "Usage: $0 [-x] program-name"
+  echo "The -x option, means start without opening new xterms for each wall"
+  exit 1
+fi
+
+if [ "$1" == "-h" ]
+then
+  echo "Usage: $0 [-x] program-name"
+  echo "The -x option, means start without opening new xterms for each wall"
+  exit 1
+fi
+
+useXT="0"
+if [ "$1" == "-x" ]
+then
+  useXT="1"
+  shift
+fi
+
+program="/share/cavewriting/bin/cwapp"
+shift
+workingDir=`pwd`
+
+#serverProg="vrg3d-server-gcc3-d"
+#serverArgs="-nogfx cave"
+
+#serverHost=`hostname`
+serverHost="audio-cave"
+#serverHost="fish4"
+
+# Pick up the local (uninstalled) version of the server if we're working
+# in the VRG3D src directory, otherwise pick up the version installed in $G
+if [ -x "obj-server/$serverProg" ]
+then
+  serverDir="$PWD/obj-server"
+else
+  serverDir="$G/bin"
+fi
+
+#server="$serverDir/$serverProg $serverArgs"
+
+./grexec-gcc3 audio-cave vrg3d-server-d.exe cave-on-audiocave &
+#./grexec-gcc3 fish4 vrg3d-server.exe cave-on-caveaudio &
+
+
+# The vrg3d event server
+serverNode="front"
+
+# Added this check & error message to help prevent confusion if
+# this script from a non-server node.  -asf
+#if [ "$HOST" != $serverNode ]
+#then
+#  echo ""
+#  echo "*** Error: you must run this script from the machine '$serverNode'.   Exiting."
+#  echo ""
+#  exit 1
+#fi
+
+
+# vrg3d graphics nodes
+clientNodes="left front right floor"
+clientSpecificArgs[0]="caveleft-winserv"
+clientSpecificArgs[1]="cavefront-winserv"
+clientSpecificArgs[2]="caveright-winserv"
+clientSpecificArgs[3]="cavefloor-winserv"
+
+
+
+# ssh to each client node and start up the gfx program
+i=0
+for client in $clientNodes
+do
+  # (using 'env' should work for any shell -asf)
+  clientCmd="ssh $client \"cd $workingDir; killall $program; setenv LD_LIBRARY_PATH $LD_LIBRARY_PATH; setenv DISPLAY :0.0; $program ${clientSpecificArgs[$i]} $@ $serverHost\""
+
+  if [ "$useXT" == "1" ]
+  then
+    /usr/bin/X11/xterm -title $client -e /bin/tcsh -c "echo $clientCmd; $clientCmd" &
+  else
+    /bin/tcsh -c "echo $clientCmd; $clientCmd" &
+  fi
+
+  let "i=i+1"
+done
+
+
+
+# Start up the server last in the foreground, so a Ctrl-C will kill it,
+# and this will cause the clients to die when they can't find the server.
+#serverCmd=$server
+#echo "serverCmd = '$serverCmd'"
+#$serverCmd
+
+#gdb $serverDir/$serverProg
+#run $serverArgs
+

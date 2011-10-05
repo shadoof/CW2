@@ -52,7 +52,7 @@ void CWApp::init(const string& file, const string& vrSetup, const string& server
   
 #ifdef G3D_LINUX
   if (vrSetup == "front" || vrSetup == "desktopsound") {
-    sound_client = new RemoteSoundClient("g5.cascv.brown.edu", SOUND_SERVER_PORT);
+    sound_client = new RemoteSoundClient("cave9.cascv.brown.edu", SOUND_SERVER_PORT);
     if (!sound_client->is_succeeded()) {
       sound_client = new LocalSoundClient();
     }

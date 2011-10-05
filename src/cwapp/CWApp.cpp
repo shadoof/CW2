@@ -195,7 +195,7 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
 
   bool cam_updated = false;
 
-  float x_acc = 0, y_acc = 0;
+  //float x_acc = 0, y_acc = 0;
 
   for (int i = 0; i < events.length(); i++) {
     string name = events[i]->getName();
@@ -222,12 +222,14 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
       	wand_frame_orig = events[i]->getCoordinateFrameData();
         wand_frame = cam_frame * wand_frame_orig;
       } else if (G3D::endsWith(name, "Y")) {
-        y_acc = events[i]->get1DData() * .025;
+        //y_acc = events[i]->get1DData() * .025;
       	//cam_frame.translation += wand_frame.lookVector() * events[i]->get1DData() * -.5;
+		y_delta = events[i]->get1DData() * .025;
         //Story::the_story->do_collision_move(cam_frame, wand_frame.lookVector() * events[i]->get1DData() * .05);
       } else if (G3D::endsWith(name, "X")) {
-        x_acc = events[i]->get1DData() * .025;
+        //x_acc = events[i]->get1DData() * .025;
       	//cam_frame.translation += wand_frame.rightVector() * events[i]->get1DData() * -.5;
+		x_delta = events[i]->get1DData() * .025;
         //Story::the_story->do_collision_move(cam_frame, wand_frame.rightVector() * events[i]->get1DData() * .05);
 	      //cout << "X Data " << events[i]->get1DData() << endl;
       } else if (name == "Wand_Left_Btn_down") {
@@ -280,7 +282,7 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
 
   //Tracker movement
   if (Story::the_story->allow_movement) {
-    if (!x_acc) {
+    /*if (!x_acc) {
       x_delta *= .75;
     } else {
       x_delta += x_acc;
@@ -290,10 +292,11 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
       y_delta *= .75;
     } else {
       y_delta += y_acc;
-    }
+    }*/
 
     if (!fuzzyEq(y_delta, 0.f) || !fuzzyEq(x_delta, 0.f)) {
-      Vector3 offset = cam_frame.lookVector() * y_delta + cam_frame.rightVector() * x_delta;
+      //Vector3 offset = cam_frame.lookVector() * y_delta + cam_frame.rightVector() * x_delta;
+	  Vector3 offset = wand_frame.lookVector() * y_delta + (wand_frame.lookVector().cross(cam_frame.upVector())) * x_delta;
       Story::the_story->do_collision_move(head_actual.translation, cam_frame.translation, offset);
     }
   }

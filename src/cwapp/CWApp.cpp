@@ -185,15 +185,18 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
 {
   UserInputVRApp::doUserInput(events);
 
+  double current_time = SynchedSystem::getLocalTime();
+  double delta = current_time - last_time;
+
   if (!randomized) {
-    ::srand(SynchedSystem::getLocalTime());
+    ::srand(current_time);
     randomized = true;
   }
 
   bool last_left_down = left_down;
   bool last_middle_down = middle_down;
 
-  bool cam_updated = false;
+  //bool cam_updated = false;
 
   //float x_acc = 0, y_acc = 0;
 
@@ -224,12 +227,12 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
       } else if (G3D::endsWith(name, "Y")) {
         //y_acc = events[i]->get1DData() * .025;
       	//cam_frame.translation += wand_frame.lookVector() * events[i]->get1DData() * -.5;
-		y_delta = events[i]->get1DData() * .025;
+		y_delta = events[i]->get1DData() * .025 * delta;
         //Story::the_story->do_collision_move(cam_frame, wand_frame.lookVector() * events[i]->get1DData() * .05);
       } else if (G3D::endsWith(name, "X")) {
         //x_acc = events[i]->get1DData() * .025;
       	//cam_frame.translation += wand_frame.rightVector() * events[i]->get1DData() * -.5;
-		x_delta = events[i]->get1DData() * .025;
+		x_delta = events[i]->get1DData() * .025 * delta;
         //Story::the_story->do_collision_move(cam_frame, wand_frame.rightVector() * events[i]->get1DData() * .05);
 	      //cout << "X Data " << events[i]->get1DData() << endl;
       } else if (name == "Wand_Left_Btn_down") {
@@ -356,6 +359,7 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
     reload_exit = false;
   }
 
+  last_time = current_time;
   SOUNDCLIENT->system_update();
 }
 

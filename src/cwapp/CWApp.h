@@ -77,6 +77,7 @@ protected:
   string filename;
 
   float rps, mps;
+  double last_time;
 };
 
 extern CWApp the_app;

@@ -22,3 +22,4 @@ freetype-config
 *.pc
 src/freetype-*/builds/unix/unix-def.mk
 libfreetype.so
+CaveWriting.build

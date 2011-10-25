@@ -51,8 +51,8 @@ void CWApp::init(const string& file, const string& vrSetup, const string& server
   set_fp_manipulator(rps, mps);
   
 #ifdef G3D_LINUX
-  if (vrSetup == "front" || vrSetup == "desktopsound") {
-    sound_client = new RemoteSoundClient("cave9.cascv.brown.edu", SOUND_SERVER_PORT);
+  if (vrSetup == "front" || vrSetup == "desktopsound" || vrSetup == "cavefront-winserv") {
+    sound_client = new RemoteSoundClient("cave9.ccv.brown.edu", SOUND_SERVER_PORT);
     if (!sound_client->is_succeeded()) {
       sound_client = new LocalSoundClient();
     }

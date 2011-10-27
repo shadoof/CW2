@@ -51,8 +51,8 @@ void CWApp::init(const string& file, const string& vrSetup, const string& server
   set_fp_manipulator(rps, mps);
   
 #ifdef G3D_LINUX
-  if (vrSetup == "front" || vrSetup == "desktopsound") {
-    sound_client = new RemoteSoundClient("cave9.cascv.brown.edu", SOUND_SERVER_PORT);
+  if (vrSetup == "front" || vrSetup == "desktopsound" || vrSetup == "cavefront-winserv") {
+    sound_client = new RemoteSoundClient("cave9.ccv.brown.edu", SOUND_SERVER_PORT);
     if (!sound_client->is_succeeded()) {
       sound_client = new LocalSoundClient();
     }
@@ -227,12 +227,12 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
       } else if (G3D::endsWith(name, "Y")) {
         //y_acc = events[i]->get1DData() * .025;
       	//cam_frame.translation += wand_frame.lookVector() * events[i]->get1DData() * -.5;
-		y_delta = events[i]->get1DData() * .025 * delta;
+		y_delta = events[i]->get1DData() * delta;
         //Story::the_story->do_collision_move(cam_frame, wand_frame.lookVector() * events[i]->get1DData() * .05);
       } else if (G3D::endsWith(name, "X")) {
         //x_acc = events[i]->get1DData() * .025;
       	//cam_frame.translation += wand_frame.rightVector() * events[i]->get1DData() * -.5;
-		x_delta = events[i]->get1DData() * .025 * delta;
+		x_delta = events[i]->get1DData() * delta;
         //Story::the_story->do_collision_move(cam_frame, wand_frame.rightVector() * events[i]->get1DData() * .05);
 	      //cout << "X Data " << events[i]->get1DData() << endl;
       } else if (name == "Wand_Left_Btn_down") {

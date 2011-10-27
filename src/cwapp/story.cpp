@@ -189,7 +189,7 @@ void Story::init_global_settings(const TiXmlElement* root)
   if (elem) {
     Color3 back_color;
     assign(back_color, elem->Attribute("color"));
-    the_app.setClearColor(back_color);
+    the_app.set_background_color(back_color);
   }
 
   elem = parser->get_element(root, "WandNavigation");

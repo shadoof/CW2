@@ -12,7 +12,10 @@ void Action::init(const TiXmlElement* root, const ContentRef& me)
   debugAssert(action_choice);
   string choice = action_choice->ValueStr();
 
-  if (choice == "ObjectChange") {
+  if (choice == "CaveChange") {
+    action_type = CAVE_TRANSITION;
+    init_transition(Parser::get_element(action_choice, "Transition"));
+  } else if (choice == "ObjectChange") {
     ContentRef obj;
 
     string obj_name = action_choice->Attribute("name");
@@ -28,6 +31,7 @@ void Action::init(const TiXmlElement* root, const ContentRef& me)
     if (obj.notNull()) {
       group = new Group();
       group->add(obj);
+      action_type = TRANSITION;
       init_transition(Parser::get_element(action_choice, "Transition"));
     }
   } else if (choice == "GroupRef") {
@@ -47,6 +51,7 @@ void Action::init(const TiXmlElement* root, const ContentRef& me)
       is_random = true;
     }
 
+    action_type = TRANSITION;
     init_transition(Parser::get_element(action_choice, "Transition"));
   } else if (choice == "MoveCave") {
     if (Parser::get_element(action_choice, "Relative")) {
@@ -128,8 +133,6 @@ void Action::init_transition(const TiXmlElement* root)
   debugAssert(trans);
   string trans_name = trans->ValueStr();
 
-  action_type = TRANSITION;
-
   assign(duration, root->Attribute("duration"));
 
   if (trans_name == "Visible") {
@@ -209,6 +212,10 @@ void Action::exec()
       //start_frame = the_app.cave_frame;
       //end_frame = start_frame * placement.get_world_frame();
       the_app.cave_vel = Placement::compute_vel(end_frame, start_frame, duration);
+      exec_transition();
+      break;
+
+    case CAVE_TRANSITION:
       exec_transition();
       break;
 
@@ -303,6 +310,9 @@ void Action::exec_transition()
         }
       }
       break;
+    case CAVE_TRANSITION:
+      the_app.begin_interp(trans_type, this);
+      break;
   }
 
   weak_inst = instance;
@@ -389,6 +399,34 @@ bool ActionInstance::process()
 
       }
     }
+  } else if (action->action_type == Action::CAVE_TRANSITION) {
+  	  switch (action->trans_type) {
+        /*case Action::TRANS_VISIBLE:
+          the_app.interp_alpha(action->color.a, elapsed);
+          break;*/
+
+        // TODO: get cave move working here too
+        /*case Action::TRANS_MOVE:
+          the_app.interp_frame(action->placement.get_world_frame(), elapsed);
+          break;
+
+        case Action::TRANS_MOVE_REL:
+          the_app.interp_frame(obj->get_end_frame(), elapsed);
+          break;*/
+
+        case Action::TRANS_COLOR:
+          the_app.interp_color(action->color, elapsed);
+          break;
+
+        /*case Action::TRANS_SCALE:
+          the_app.interp_scale(action->scale, elapsed);
+          break;*/
+
+        /*case Action::TRANS_LINK:
+          if (elapsed == 1.f) {
+            obj->select(false);
+          }*/
+      }
   } else if ((action->action_type == Action::MOVE_CAVE) || (action->action_type == Action::MOVE_CAVE_REL)) {
     the_app.cave_frame = (action->start_frame.lerp(action->end_frame, elapsed));
     if (done) {

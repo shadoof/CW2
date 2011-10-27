@@ -31,6 +31,8 @@ public:
 
   void update_far_clip(double far_clip);
 
+  void set_background_color(Color3 color);
+
   Vector3 screen_point_to_camera_plane(const Vector2 &v);
 
   Vector3         get_cam_pos() const   { return cam_frame.translation; }
@@ -45,6 +47,10 @@ public:
   bool is_caved_in() const { return is_cave; }
   
   bool is_draw_bbox() const { return draw_bbox; }
+  
+  void begin_interp(int type, const ActionRef& action);
+  
+  void interp_color(const Color4& end_color, float elapsed);
 
 public:
   CoordinateFrame cave_frame;
@@ -65,6 +71,9 @@ protected:
   CoordinateFrame wand_frame;
   CoordinateFrame combined, actual, head_actual;
   CoordinateFrame cam_full;
+
+  Color4 background_color;
+  Color4 start_color;
 
   Vector3 seed_vector;
   

@@ -19,6 +19,7 @@ public:
 
   enum ActionType
   {
+    CAVE_TRANSITION,
     MOVE_CAVE,
     MOVE_CAVE_REL,
     TIMELINE,

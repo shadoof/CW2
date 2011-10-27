@@ -451,6 +451,13 @@ void CWApp::draw_framerate(RenderDevice *rd)
 }
 
 //===========================================
+void CWApp::set_background_color(Color3 color)
+{
+	background_color = color;
+	setClearColor(color);
+}
+
+//===========================================
 void CWApp::update_far_clip(double far_clip)
 {
   if ((far_clip <= 0) || fuzzyEq(far_clip, _tile.farClip)) {
@@ -476,6 +483,26 @@ Vector3 CWApp::screen_point_to_camera_plane(const Vector2 &v)
   Vector3 cam_bot_left = cam_full.pointToWorldSpace(tile.botLeft) + cam_full.lookVector();
   Vector3 p = cam_bot_left + (x * cam_full.rightVector() * ratio) + (y * cam_full.upVector());
   return p;
+}
+
+//===========================================
+void CWApp::begin_interp(int type, const ActionRef& action)
+{
+  switch (type) {
+    case Action::TRANS_COLOR:
+      start_color = background_color;
+      break;
+  }
+}
+
+//===========================================
+void CWApp::interp_color(const Color4& end_color, float elapsed)
+{
+  float inv_elapse = (1.f - elapsed);
+  background_color.r = (inv_elapse * start_color.r) + (elapsed * end_color.r);
+  background_color.g = (inv_elapse * start_color.g) + (elapsed * end_color.g);
+  background_color.b = (inv_elapse * start_color.b) + (elapsed * end_color.b);
+  setClearColor(background_color);
 }
 
 #ifdef USE_GLUT

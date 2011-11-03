@@ -227,12 +227,12 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
       } else if (G3D::endsWith(name, "Y")) {
         //y_acc = events[i]->get1DData() * .025;
       	//cam_frame.translation += wand_frame.lookVector() * events[i]->get1DData() * -.5;
-		y_delta = events[i]->get1DData() * delta;
+		y_delta = events[i]->get1DData();
         //Story::the_story->do_collision_move(cam_frame, wand_frame.lookVector() * events[i]->get1DData() * .05);
       } else if (G3D::endsWith(name, "X")) {
         //x_acc = events[i]->get1DData() * .025;
       	//cam_frame.translation += wand_frame.rightVector() * events[i]->get1DData() * -.5;
-		x_delta = events[i]->get1DData() * delta;
+		x_delta = events[i]->get1DData();
         //Story::the_story->do_collision_move(cam_frame, wand_frame.rightVector() * events[i]->get1DData() * .05);
 	      //cout << "X Data " << events[i]->get1DData() << endl;
       } else if (name == "Wand_Left_Btn_down") {
@@ -299,7 +299,7 @@ void CWApp::doUserInput(Array<VRG3D::EventRef>& events)
 
     if (!fuzzyEq(y_delta, 0.f) || !fuzzyEq(x_delta, 0.f)) {
       //Vector3 offset = cam_frame.lookVector() * y_delta + cam_frame.rightVector() * x_delta;
-	  Vector3 offset = wand_frame.lookVector() * y_delta + (wand_frame.lookVector().cross(cam_frame.upVector())) * x_delta;
+	  Vector3 offset = delta * (wand_frame.lookVector() * y_delta + (wand_frame.lookVector().cross(cam_frame.upVector())) * x_delta);
       Story::the_story->do_collision_move(head_actual.translation, cam_frame.translation, offset);
     }
   }

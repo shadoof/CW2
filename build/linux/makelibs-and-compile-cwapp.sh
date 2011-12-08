@@ -7,6 +7,8 @@ ROOTDIR=$(pwd)
 LIBPATH=$(pwd)/../../src
 BINPATH=$(pwd)/../../bin
 LIBOUT=$(pwd)/buildlib
+export INCLUDE=$LIBPATH
+export LIBRARY=$LIBPATH
 
 ###Make sure lib exists
 mkdir buildlib
